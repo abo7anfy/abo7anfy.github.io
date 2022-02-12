@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img
+      src="home1.jpg"
+      id="image"
+      onmouseover="slider()"
+      onmouseout="stopSlider()"
+      style="width: 200px; height: 200px"
+    />
+</body> 
+
+<script>
+     var images = ["home1.jpg","home2.jpeg", "home3.jpg", "home5.jpg", "home3.jpg"];
+        var i = 0;
+        var timer;
+        function slider() {
+          timer = setInterval(function () {
+            i++;
+            if (i > 4) {
+              i = 0;
+            }
+
+            document.images[0].src = images[i];
+          }, 2000);
+        }
+
+        function stopSlider() {
+          clearInterval(timer);
+        }
+
+      setTimeout(function() {
+
+          document.images[0].src="home1.jpg"
+
+      },5000)
+
+       document.images[0].id="test"
+</script>
+</html>
